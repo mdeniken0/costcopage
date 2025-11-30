@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wholesale Club Rewards</title>
+    
+    <!-- 1. Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- 2. Tailwind Configuration for specific brand colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#005DAA', // Similar to Costco Blue
+                            red: '#E31837',  // Similar to Costco Red
+                            darkBlue: '#004a8f'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Helvetica Neue"', 'Helvetica', 'Arial', 'sans-serif'], // Classic retail font stack
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- 3. Lucide Icons Script -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        /* Smooth transition for mobile menu */
+        #mobile-menu {
+            transition: all 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-white font-sans text-slate-800 flex flex-col">
+
+    <!-- Navigation Bar -->
+    <nav class="border-b border-gray-200 bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                
+                <!-- Logo Area -->
+                <div class="flex items-center gap-2">
+                    <div class="text-2xl font-bold italic tracking-tight text-brand-red">
+                        <span class="text-brand-blue">Wholesale</span>Club
+                    </div>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 text-sm font-medium text-gray-600">
+                    <a href="#" class="hover:text-brand-blue transition-colors">Membership</a>
+                    <a href="#" class="hover:text-brand-blue transition-colors">Locations</a>
+                    <a href="#" class="hover:text-brand-blue transition-colors">Customer Service</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="menu-btn" class="text-gray-500 hover:text-gray-700 focus:outline-none">
+                        <i data-lucide="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu Dropdown (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-50 border-t border-gray-100">
+            <div class="flex flex-col space-y-2 px-4 py-2">
+                <a href="#" class="block py-2 text-base font-medium text-gray-700 hover:text-brand-blue">Membership</a>
+                <a href="#" class="block py-2 text-base font-medium text-gray-700 hover:text-brand-blue">Locations</a>
+                <a href="#" class="block py-2 text-base font-medium text-gray-700 hover:text-brand-blue">Customer Service</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+        
+        <!-- Headline Section -->
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4 text-brand-blue">
+                Claim Your $500 Wholesale <br class="hidden sm:block" />
+                <span class="text-brand-red">Shop Card Reward</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
+                Complete 3 simple steps to verify your membership eligibility and receive your rewards instantly.
+            </p>
+        </div>
+
+        <!-- Steps Cards Container -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl w-full mb-16">
+            
+            <!-- Step 1 Card -->
+            <div class="bg-white border border-gray-200 rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col items-center text-center group cursor-default">
+                <div class="w-16 h-16 rounded-full bg-blue-50 flex items-center justify-center mb-6 group-hover:bg-blue-100 transition-colors">
+                    <i data-lucide="user" class="text-brand-blue w-8 h-8"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">1. Confirm Details</h3>
+                <p class="text-gray-500 text-sm leading-relaxed">
+                    Enter your basic information to locate your potential reward eligibility in our system.
+                </p>
+            </div>
+
+            <!-- Step 2 Card -->
+            <div class="bg-white border border-gray-200 rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col items-center text-center group cursor-default">
+                <div class="w-16 h-16 rounded-full bg-blue-50 flex items-center justify-center mb-6 group-hover:bg-blue-100 transition-colors">
+                    <i data-lucide="check-circle-2" class="text-brand-blue w-8 h-8"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">2. Quick Verification</h3>
+                <p class="text-gray-500 text-sm leading-relaxed">
+                    Answer a few short questions about your shopping habits to verify you are a real person.
+                </p>
+            </div>
+
+            <!-- Step 3 Card -->
+            <div class="bg-white border border-gray-200 rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col items-center text-center group cursor-default">
+                <div class="w-16 h-16 rounded-full bg-blue-50 flex items-center justify-center mb-6 group-hover:bg-blue-100 transition-colors">
+                    <i data-lucide="gift" class="text-brand-blue w-8 h-8"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">3. Receive Reward</h3>
+                <p class="text-gray-500 text-sm leading-relaxed">
+                    Once verified, your $500 Shop Card will be processed and sent to your email immediately.
+                </p>
+            </div>
+
+        </div>
+
+        <!-- CTA Button -->
+        <div class="w-full max-w-md mx-auto">
+            <button 
+                onclick="handleClaimClick()"
+                class="bg-brand-blue hover:bg-brand-darkBlue text-white text-xl font-bold py-4 px-12 rounded-lg w-full shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-2 group"
+            >
+                Claim Your Shop Card
+                <i data-lucide="chevron-right" class="w-6 h-6 stroke-[3]"></i>
+            </button>
+            <p class="text-center text-xs text-gray-400 mt-4">
+                Limited time offer. Terms and conditions apply.
+            </p>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-50 border-t border-gray-200 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+                <div class="mb-4 md:mb-0 space-x-6">
+                    <a href="#" class="hover:text-gray-900 underline">Terms of Use</a>
+                    <a href="#" class="hover:text-gray-900 underline">Privacy Policy</a>
+                    <a href="#" class="hover:text-gray-900 underline">CA Supply Chains Act</a>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span id="copyright-year"></span>
+                </div>
+            </div>
+            <div class="mt-4 text-center md:text-left text-xs text-gray-400 max-w-4xl">
+                This website is a third-party rewards program and is not directly affiliated with, endorsed by, or operated by any specific wholesale club. All trademarks remain the property of their respective owners.
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // 1. Initialize Icons
+        lucide.createIcons();
+
+        // 2. Set Footer Year Automatically
+        document.getElementById('copyright-year').innerHTML = `&copy; ${new Date().getFullYear()} Wholesale Rewards Program. All rights reserved.`;
+
+        // 3. Mobile Menu Toggle Logic
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = menuBtn.querySelector('i'); // Get the icon element inside the button
+
+        let isMenuOpen = false;
+
+        menuBtn.addEventListener('click', () => {
+            isMenuOpen = !isMenuOpen;
+            
+            if (isMenuOpen) {
+                mobileMenu.classList.remove('hidden');
+                // Change icon to X (optional, requires re-rendering icon or swapping svg)
+                // For simplicity in vanilla JS, we often just leave it or swap innerHTML
+                // But since we are using Lucide script, we can just toggle visibility
+            } else {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+
+        // 4. Handle CTA Click
+        function handleClaimClick() {
+            // REPLACE THIS URL with your actual affiliate link
+            const AFFILIATE_LINK = "https://your-affiliate-link-here.com";
+            
+            // Redirect
+            window.location.href = AFFILIATE_LINK;
+        }
+    </script>
+</body>
+</html>
